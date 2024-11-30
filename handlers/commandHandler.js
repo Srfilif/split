@@ -19,7 +19,7 @@ const handleCommands = async (client) => {
     try {
         console.log('Iniciando registro de comandos...');
         await rest.put(
-            Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
+            Routes.applicationGuildCommands("Client", "Proc"),
             { body: commands }
         );
         console.log('Comandos registrados exitosamente.');
