@@ -1,4 +1,3 @@
-require("dotenv").config({ path: "./config/config.env" });
 const { Client, GatewayIntentBits, Collection } = require("discord.js");
 const fs = require("fs-extra");
 
@@ -21,4 +20,4 @@ client.once("ready", () => {
     console.log(`Bot conectado como ${client.user.tag}`);
 });
 
-client.login(process.env.DISCORD_TOKEN);
+client.login("BOT_TOKEN");
