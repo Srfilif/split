@@ -14,7 +14,7 @@ const handleCommands = async (client) => {
         client.commands.set(command.data.name, command); // Guarda el comando en el cliente
     }
 
-    const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
+    const rest = new REST({ version: '10' }).setToken("BOT_TOKEN");
 
     try {
         console.log('Iniciando registro de comandos...');
