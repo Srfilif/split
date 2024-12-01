@@ -2,7 +2,7 @@
 <a href="https://github.com/Srfilif/split"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/Srfilif/split?style=for-the-badge"></a> 
 <a href="https://github.com/VishalCodez/Discord.js-v13-Handler-With-Mango-Db/network"><img alt="GitHub Forks" src="https://img.shields.io/github/forks/Srfilif/split?style=for-the-badge"></a>
 
-</p>
+
 
 ***
  <h3 align='center'> DISCORD SUPPORT </h3>
