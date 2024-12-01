@@ -13,7 +13,7 @@ const { handleCommands } = require("./handlers/commandHandler");
 handleCommands(client);
 
 client.once("ready", () => {
-  console.log(`Bot conectado como ${client.user.tag}`);
+  console.log(`Bot conectado como: ${client.user.tag}`);
 
   // Configurar estado con comandos sugeridos
   client.user.setPresence({
