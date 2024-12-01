@@ -1,4 +1,3 @@
-require("dotenv").config({ path: "./config/config.env" });
 const {
   Client,
   GatewayIntentBits,
@@ -29,4 +28,4 @@ client.once("ready", () => {
   });
 });
 
-client.login(process.env.DISCORD_TOKEN);
+client.login("BOT_TOKEN");
