@@ -1,5 +1,12 @@
 ﻿# SplitBot - Discord Bot
+<a href="https://github.com/VishalCodez/Discord.js-v13-Handler-With-Mango-Db"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/VishalCodez/Discord.js-v13-Handler-With-Mango-Db?style=for-the-badge"></a> 
+<a href="https://github.com/VishalCodez/Discord.js-v13-Handler-With-Mango-Db/network"><img alt="GitHub Forks" src="https://img.shields.io/github/forks/VishalCodez/Discord.js-v13-Handler-With-Mango-Db?style=for-the-badge"></a>
 
+</p>
+
+***
+ <h3 align='center'> CODE STREAKERS DISCORD SERVER </h3>
+<div align="center"> <a href="https://discord.gg/czHQgQgMHY"><img src="https://img.shields.io/discord/924403432054456351?label=discord&logo=Discord&style=for-the-badge" alt="Discord server" /></a><div align="center">
 SplitBot es un bot de Discord diseñado para gestionar comandos de manera eficiente. Con una estructura modular y fácil de configurar, SplitBot es perfecto para servidores de Discord que necesiten automatización y una amplia variedad de comandos personalizados.
 
 ---
