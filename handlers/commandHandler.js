@@ -14,12 +14,12 @@ const handleCommands = async (client) => {
         client.commands.set(command.data.name, command); // Guarda el comando en el cliente
     }
 
-    const rest = new REST({ version: '10' }).setToken("BOT_TOKEN");
+    const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
 
     try {
         console.log('Iniciando registro de comandos...');
         await rest.put(
-            Routes.applicationGuildCommands("Client", "Proc"),
+            Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
             { body: commands }
         );
         console.log('Comandos registrados exitosamente.');

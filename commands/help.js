@@ -1,37 +1,28 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('help')
-        .setDescription('Muestra una lista de todos los comandos disponibles.'),
+        .setName('help')  // El nombre del comando
+        .setDescription('Muestra la lista de comandos disponibles'), // La descripción del comando
     async execute(interaction) {
-        const commands = interaction.client.commands;
-
-        // Agrupa comandos por categoría
-        const categorizedCommands = {};
-        commands.forEach(command => {
-            const category = command.category || 'Otros'; // Si no hay categoría, se pone 'Otros'
-            if (!categorizedCommands[category]) {
-                categorizedCommands[category] = [];
+        // Asegúrate de que la interacción solo sea respondida una vez
+        try {
+            // Si ya se ha respondido previamente a la interacción, evita hacer más respuestas.
+            if (!interaction.deferred && !interaction.replied) {
+                await interaction.reply({
+                    content: 'Aquí tienes la lista de comandos:\n- `/help`: Muestra esta lista de comandos.\n- Otros comandos...',
+                    ephemeral: true, // Opcional, solo el usuario que usó el comando puede verlo
+                });
             }
-            categorizedCommands[category].push({
-                name: command.data.name,
-                description: command.data.description,
-            });
-        });
-
-        // Crea un mensaje bonito para mostrar la lista de comandos
-        let helpMessage = '**Lista de comandos:**\n\n';
-        for (const [category, cmds] of Object.entries(categorizedCommands)) {
-            helpMessage += `**${category}**\n`;
-            cmds.forEach(cmd => {
-                helpMessage += `\`/${cmd.name}\`: ${cmd.description}\n`;
-            });
-            helpMessage += '\n';
+        } catch (error) {
+            console.error('Error al ejecutar el comando:', error);
+            // Si algo sale mal, intenta usar editReply para cambiar la respuesta original
+            if (interaction.replied) {
+                await interaction.editReply({
+                    content: "Hubo un error al ejecutar este comando.",
+                    ephemeral: true,
+                });
+            }
         }
-
-        // Responde al usuario
-        await interaction.reply({ content: helpMessage, ephemeral: true });
     },
-    category: 'General', // Categoría del comando
 };
